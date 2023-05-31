@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PROJECT_PATH: examples/factory_demo
-      BIN_FILE: ESP-Box_Demo_V0.3.0.bin
+      BIN_FILE: ESP-Box_Demo_V0.3.1.bin
     container: espressif/idf:release-v5.0
     steps:
     - name: Checkout repo
