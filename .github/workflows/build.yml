@@ -8,7 +8,7 @@ jobs:
     env:
       PROJECT_PATH: examples/factory_demo
       BIN_FILE: ESP-Box_Demo_V0.3.1.bin
-    container: espressif/idf:release-v4.4
+    container: espressif/idf:v4.4.4
     steps:
     - name: Checkout repo
       uses: actions/checkout@v2
@@ -20,7 +20,8 @@ jobs:
         pwd
         ls -al
         cd /opt/esp/idf
-        git checkout c8ce38e60c
+        git config -l
+        git checkout v4.4.4
         git submodule update --init --recursive
         tools/idf_tools.py --non-interactive install cmake
         ./install.sh
@@ -39,4 +40,4 @@ jobs:
         # A file, directory or wildcard pattern that describes what to upload
         path: |
           examples/factory_demo/build/ESP-*.bin
-        retention-days: 90
+        retention-days: 10
